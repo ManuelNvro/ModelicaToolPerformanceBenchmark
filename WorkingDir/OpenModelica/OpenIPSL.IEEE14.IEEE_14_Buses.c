@@ -4472,7 +4472,7 @@ void OpenIPSL_IEEE14_IEEE_14_Buses_setupDataStruc(DATA *data, threadData_t *thre
   data->modelData->modelFilePrefix = "OpenIPSL.IEEE14.IEEE_14_Buses";
   data->modelData->resultFileName = NULL;
   data->modelData->modelDir = "/home/manuelnvro/dev/Gitted/DymolaPerformance/OpenIPSL-1.5.0/OpenIPSL/IEEE14";
-  data->modelData->modelGUID = "{e5bc6438-2c76-417b-97f9-6a50aa95dfc2}";
+  data->modelData->modelGUID = "{30bebf61-f2e4-4e33-ba1f-9d4de9db96f3}";
   #if defined(OPENMODELICA_XML_FROM_FILE_AT_RUNTIME)
   data->modelData->initXMLData = NULL;
   data->modelData->modelDataXml.infoXMLData = NULL;

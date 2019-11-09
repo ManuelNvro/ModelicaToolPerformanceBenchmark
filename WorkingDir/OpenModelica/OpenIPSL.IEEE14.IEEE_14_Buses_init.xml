@@ -9,11 +9,11 @@
 
   OPENMODELICAHOME                    = "/usr"
 
-  guid                                = "{e5bc6438-2c76-417b-97f9-6a50aa95dfc2}"
+  guid                                = "{30bebf61-f2e4-4e33-ba1f-9d4de9db96f3}"
 
   description                         = ""
   generationTool                      = "OpenModelica Compiler OpenModelica 1.13.0"
-  generationDateAndTime               = "2019-11-09T14:06:58Z"
+  generationDateAndTime               = "2019-11-09T15:02:06Z"
 
   variableNamingConvention            = "structured"
 
@@ -48,7 +48,7 @@
   <DefaultExperiment
     startTime      = "0"
     stopTime       = "1"
-    stepSize       = "0.0002"
+    stepSize       = "0.0001"
     tolerance      = "1e-06"
     solver        = "dassl"
     outputFormat      = "mat"
