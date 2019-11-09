@@ -10,16 +10,19 @@ import time
 #This is intended to be used in the manuelnvro Dell using Dymola 2020.
 print(omc.sendExpression("getVersion()"))
 print("OpenModelica Simulation Start...")
-#Set WorkigDir
+#Set WorkingDir
 omc.sendExpression("cd(\"/home/manuelnvro/dev/Gitted/DymolaPerformance/WorkingDir/OpenModelica\")") 
 #Loading Package
 omc.sendExpression("loadFile(\"/home/manuelnvro/dev/Gitted/DymolaPerformance/OpenIPSL-1.5.0/OpenIPSL/package.mo\")")
 #Package Instantiation
 omc.sendExpression("instantiateModel(OpenIPSL)")
-t = time.time()
 #OpenModelica Simulation
-omc.sendExpression("simulate(IEEE14.IEEE_14_Buses, stopTime=120, numberOfIntervals=0, outputInterval=0.001, tolerance=1e-06, fixedstepsize=0.001, resultFile=IEEE_14_Buses)")
+t = time.time()
+flag = omc.sendExpression("simulate(OpenIPSL.IEEE14.IEEE_14_Buses, stopTime= 1, numberOfIntervals=5000)")
+print(flag)
 print("Simulation OK")
+#OpenModelica Simulation
+#omc.sendExpression("simulate(IEEE14.IEEE_14_Buses, stopTime=120, numberOfIntervals=0, outputInterval=0.001, tolerance=1e-06, fixedstepsize=0.001, resultFile=IEEE_14_Buses)")
+#print("Simulation OK")
 print(f"time: {time.time() - t}")
-
 
