@@ -1,5 +1,5 @@
 within OpenIPSL.IEEE14;
-model IEEE_14_Buses
+model IEEE_14_Buses_3
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Buses.Bus B1(V_b = 69, V_0 = 1.06, angle_0 = 0) annotation (
     Placement(transformation(extent = {{-15, -15}, {15, 15}}, rotation = 90, origin = {-135, -31})));
@@ -103,11 +103,17 @@ model IEEE_14_Buses
   inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100, fn = 60) annotation (
     Placement(transformation(extent = {{-194, 126}, {-128, 154}})));
   OpenIPSL.Electrical.Events.PwFault pwFault2(X = 1e-5,
-    t1=60,                                                      R = 0,
-    t2=61.5)                                                                     annotation (
+    t1=20,                                                      R = 0,
+    t2=21.5)                                                                     annotation (
     Placement(transformation(extent = {{-7, -7}, {7, 7}}, rotation = 270, origin = {73, -51})));
   Generation_Groups.GroupBus1 groupBus1_1(V_b = 69, V_0 = 1.06, P_0 = 3.520304175896794 * SysData.S_b, Q_0 = -0.281968127428245 * SysData.S_b) annotation (
     Placement(transformation(extent = {{-178, -16}, {-158, 4}})));
+  Electrical.Events.PwFault          pwFault1(
+    X=1e-5,
+    t1=80,
+    R=0,
+    t2=82.5)                                                                     annotation (
+    Placement(transformation(extent = {{-7, -7}, {7, 7}}, rotation = 270, origin={127,83})));
 equation
   connect(B12.p, L11.p) annotation (
     Line(points = {{-128, 68}, {-128, 62}, {-88, 62}, {-88, 70.9}}, color = {0, 0, 255}, smooth = Smooth.None));
@@ -223,6 +229,8 @@ equation
     Line(points = {{-157, -6.2}, {-135, -6.2}, {-135, -31}}, color = {0, 0, 255}));
   connect(B4.p, pwFault2.p) annotation (
     Line(points={{32,-32},{32,-28},{73,-28},{73,-42.8333}},          color = {0, 0, 255}));
+  connect(pwFault1.p, B14.p) annotation (Line(points={{127,91.1667},{127,98},{
+          104,98},{104,108}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-200, -180}, {200, 160}})),
     Icon(coordinateSystem(extent = {{-200, -180}, {200, 160}})),
@@ -265,4 +273,4 @@ equation
       Tolerance=1e-06),
     __Dymola_experimentSetupOutput,
   __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "rungekutta"));
-end IEEE_14_Buses;
+end IEEE_14_Buses_3;
