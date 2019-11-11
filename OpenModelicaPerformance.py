@@ -8,21 +8,21 @@ import pandas as pd
 import numpy as np
 import os
 import time
-os.chdir("/home/manuelnvro/dev/Gitted/DymolaPerformance/OpenIPSL-1.5.0/OpenIPSL")
+os.chdir("/home/manuelnvro/dev/Gitted/ModelicaToolPerformanceBenchmark/OpenIPSL-1.5.0/OpenIPSL")
 #This is intended to be used in the manuelnvro Dell using Dymola 2020.
 print(omc.sendExpression("getVersion()"))
 print("OpenModelica Simulation Start...")
 #Set WorkingDir
-omc.sendExpression("cd(\"/home/manuelnvro/dev/Gitted/DymolaPerformance/WorkingDir/OpenModelica\")") 
+omc.sendExpression("cd(\"/home/manuelnvro/dev/Gitted/ModelicaToolPerformanceBenchmark/WorkingDir/OpenModelica\")") 
 #Loading Package
-omc.sendExpression("loadFile(\"/home/manuelnvro/dev/Gitted/DymolaPerformance/OpenIPSL-1.5.0/OpenIPSL/package.mo\")")
+omc.sendExpression("loadFile(\"/home/manuelnvro/dev/Gitted/ModelicaToolPerformanceBenchmark/OpenIPSL-1.5.0/OpenIPSL/package.mo\")")
 #Package Instantiation
 omc.sendExpression("instantiateModel(OpenIPSL)")
 #print(omc.sendExpression("getInstallationDirectoryPath()"))
 #OpenModelica Simulation
 #t = time.time()
 #print(omc.sendExpression("getSimulationOptions()"))
-flag = omc.sendExpression("simulate(OpenIPSL.IEEE14.IEEE_14_Buses, stopTime=1, method = 'euler')")
+flag = omc.sendExpression("simulate(OpenIPSL.IEEE14.IEEE_14_Buses, stopTime=1, method = \"euler\")")
 print(flag)
 print("Simulation OK")
 #OpenModelica Simulation
